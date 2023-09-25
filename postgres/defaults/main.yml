@@ -1,0 +1,2 @@
+---
+postgresql_version: "12"  # Change this to the desired version if needed

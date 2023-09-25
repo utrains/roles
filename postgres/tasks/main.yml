@@ -1,0 +1,14 @@
+---
+- name: Install PostgreSQL on Debian based systems
+  become: true
+  apt:
+    name: postgresql-{{ postgresql_version }}
+    state: present
+  when: ansible_os_family == 'Debian'
+
+- name: Install PostgreSQL on Red Hat based systems
+  become: true
+  yum:
+    name: postgresql{{ postgresql_version | regex_replace('\.', '') }}
+    state: present
+  when: ansible_os_family == 'RedHat'

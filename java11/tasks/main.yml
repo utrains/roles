@@ -6,7 +6,7 @@
 
 - name: Install Java (for Ubuntu/Debian)
   apt:
-    name: "{{ java_package }}"
+    name: "{{ java_package_ubuntu }}"
     state: present
   when: ansible_os_family == 'Debian'
 
